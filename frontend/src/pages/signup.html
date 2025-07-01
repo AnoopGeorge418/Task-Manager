@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignUp - Task Manager</title>
+  <link rel="stylesheet" href="../styles/signUp.css" />
+</head>
+<body>
+  <div class="signup_container">
+    <div class="welcome_msg">
+      <h1>Getting Started</h1>
+      <p>Let's embark on this journey with some spark</p>
+    </div>
+
+    <div class="data_inputs">
+      <input type="text" name="userName" id="userName" placeholder="Enter your username..." required />
+      <br />
+      <input type="email" name="userEmail" id="userEmail" placeholder="Enter your email..." required />
+      <br />
+      <input type="password" name="password" id="userPassword" placeholder="Enter your password..." required />
+      <br />
+      <input type="password" name="confirmPassword" id="userConfirmPassword" placeholder="Confirm your password..." required />
+    </div>
+
+    <div class="signupBtn">
+      <input id="signupBtn1" type="button" value="Sign Up" />
+    </div>
+
+    <div class="redirect_login">
+      <p>Already have an account? <span class="loginLink">Login</span></p>
+    </div>
+
+    <div id="customAlert" class="alert hidden"></div>
+  </div>
+
+  <script type="module" src="../js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+body {
+    background: linear-gradient(#000000, #FFFFFF);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container {
+    width: 30rem;
+    height: 25rem;
+    background-color: rgb(159, 158, 158);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.welcome_msg {
+    text-align: center;
+}
+
+.welcome_msg p {
+    margin-top: -1rem;
+}
+
+.data_inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.data_inputs input {
+    width: 20rem;
+    height: 2rem;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.fogotPass button {
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: black;
+    margin: 1rem 17rem;
+    width: 9rem;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.fogotPass button:hover {
+    font-size: 1rem;
+}
+
+.loginBtn {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.loginBtn input {
+    width: 8.5rem;
+    height: 2.5rem;
+    border-radius: .5rem;
+    background-color: rgb(76, 76, 245);
+    color: white;
+    cursor: pointer;
+}
+
+.signUpLink {
+    display: flex;
+    justify-content: center;
+}
+
+.signUpLink span {
+    color: rgb(23, 77, 152);
+    cursor: pointer;
+}
+
+.alert {
+  background-color: #754f50;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
