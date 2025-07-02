@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Task Manager — Your Daily Task Buddy</title>
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
   <header>
     <h1>🧠 Task Manager</h1>
     <nav>
-        <button class="authBtn1">Login</button>
-        <button class="authBtn1">Signup</button>
+      <button class="authBtn1" onclick="window.location.href='./login.html'">Login</button>
+      <button class="authBtn1" onclick="window.location.href='./signup.html'">Signup</button>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <h2>Organize. Focus. Execute.</h2>
-      <p>The ultimate task manager for students, vloggers, and creators.</p>
+      <p class="tagline">Your productivity sidekick to keep you organized and stress-free.</p>
       <div class="cta-buttons">
-        <button class="authBtn2">Login</button>
-        <button class="authBtn2">Signup</button>
+        <button class="authBtn2" onclick="window.location.href='./login.html'">Login</button>
+        <button class="authBtn2" onclick="window.location.href='./signup.html'">Signup</button>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Task Manager. Made by <a href="https://github.com/AnoopGeorge418">Anoop George</a> with ☕ and JS.</p>
+    <p>&copy; 2025 Task Manager. Built by 
+      <a href="https://github.com/AnoopGeorge418" target="_blank">Anoop George</a> with ☕ and Vanilla JS.
+    </p>
   </footer>
 
   <script src="./js/index.js"></script>
