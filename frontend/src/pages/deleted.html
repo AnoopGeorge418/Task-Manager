@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deleted Tasks - Task Manager</title>
+  <link rel="stylesheet" href="../styles/deleted.css" />
+</head>
+<body>
+  <div class="dashboard_container">
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Task Manager</h2>
+      <button onclick="window.location.href='dashboard.html'">➕ Add Task</button>
+      <button onclick="window.location.href='view.html'">📋 View Tasks</button>
+      <button onclick="window.location.href='deleted.html'">🗑️ Deleted Tasks</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main_area">
+      <div class="task_list_container">
+        <h1>🗑️ Deleted Tasks</h1>
+
+        <!-- Example deleted task card -->
+        <div class="task_card">
+          <div class="task_info">
+            <h3>🧹 Clean up repo</h3>
+            <p><strong>Deleted on:</strong> 2025-07-02</p>
+            <p><strong>Status:</strong> Deleted</p>
+          </div>
+          <div class="task_actions">
+            <button class="restore">♻️ Restore</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/deleted.js"></script>
+</body>
+</html>

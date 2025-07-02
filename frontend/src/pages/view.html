@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Tasks - Task Manager</title>
+  <link rel="stylesheet" href="../styles/view.css" />
+</head>
+<body>
+  <div class="dashboard_container">
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Task Manager</h2>
+      <button onclick="window.location.href='dashboard.html'">➕ Add Task</button>
+      <button onclick="window.location.href='view.html'">📋 View Tasks</button>
+      <button>🗑️ Deleted Tasks</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main_area">
+      <div class="task_list_container">
+        <h1>Your Tasks</h1>
+
+        <!-- Example of a task card -->
+        <div class="task_card">
+          <div class="task_info">
+            <h3>📌 Finish UI design</h3>
+            <p><strong>Status:</strong> Pending</p>
+            <p><strong>Due:</strong> 2025-07-04</p>
+          </div>
+          <div class="task_actions">
+            <button class="update">✏️ Update</button>
+            <button class="delete">🗑️ Delete</button>
+          </div>
+        </div>
+
+        <!-- Add more cards dynamically with JS later -->
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/view.js"></script>
+</body>
+</html>
