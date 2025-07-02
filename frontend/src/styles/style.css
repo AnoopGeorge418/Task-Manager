@@ -1,116 +1,136 @@
-/* Reset some default browser styles */
+/* 🌌 Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Typography and base setup */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f8f9fa, #e8ecf1);
-  color: #333;
-  line-height: 1.6;
+  background: linear-gradient(to bottom right, #38455b, #1d1e30);
+  color: #f0f0f0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Header styles */
+/* 🧠 Header */
 header {
-  background-color: #ffffff;
+  background-color: #1a1e29;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
-  font-size: 1.5rem;
-  color: #0077cc;
+  font-size: 1.75rem;
+  color: #66aaff;
 }
 
-nav .authBtn1 {
+/* 🔐 Header Buttons */
+.authBtn1 {
   margin-left: 1rem;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: rgb(68, 112, 233);
+  background-color: #4f80ff;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
   font-weight: bold;
-  padding: .5rem;
-  border-radius: .5rem;
-  transition: color 0.3s ease;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-nav .authBtn1:hover {
-  color: #000000;
+.authBtn1:hover {
+  background-color: #3563dd;
 }
 
-/* Main hero section */
+/* 🎯 Hero Section */
 main {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  text-align: center;
 }
 
 .hero {
-  text-align: center;
   max-width: 600px;
 }
 
 .hero h2 {
   font-size: 2.5rem;
+  color: #ffffff;
   margin-bottom: 1rem;
-  color: #111;
 }
 
-.hero p {
+.hero .tagline {
   font-size: 1.2rem;
+  color: #cccccc;
   margin-bottom: 2rem;
-  color: #555;
 }
 
-/* CTA Buttons */
+/* 🚀 CTA Buttons */
 .cta-buttons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-.authBtn2{
-  background-color: #0077cc;
+.authBtn2 {
+  background-color: #4f80ff;
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .authBtn2:hover {
-  background-color: #005fa3;
-  transform: translateY(-2px);
+  background-color: #3563dd;
+  transform: scale(1.05);
 }
 
-/* Footer */
+/* 🔻 Footer */
 footer {
-  background-color: #f2f2f2;
-  padding: 1rem;
+  background-color: #1a1e29;
   text-align: center;
+  padding: 1rem;
   font-size: 0.9rem;
-  color: #777;
+  color: #999;
+  margin-top: auto;
 }
-
 
 footer a {
+  color: #8ab4f8;
+  font-weight: bold;
   text-decoration: none;
-  color: black;
-  cursor: pointer;
-  transition: font-size 0.3s ease-in;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* 📱 Responsive Tweak */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero .tagline {
+    font-size: 1rem;
+  }
+
+  .authBtn2 {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -1,86 +1,140 @@
+/* 🌌 Global Styles */
+:root {
+  --bg-gradient-start: #38455b;
+  --bg-gradient-end: #1d1e30;
+  --input-bg: #445069;
+  --input-text: #ffffff;
+  --container-bg: #2d3a55;
+  --button-bg: #4f80ff;
+  --button-hover: #3563dd;
+  --success-bg: #4caf50;
+  --error-bg: #ff4d4f;
+  --font-main: "Segoe UI", sans-serif;
+  --text-color: #ffffff;
+  --text-muted: #b0b8c1;
+  --link-color: #9db7ff;
+}
+
+/* Reset & Base Layout */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: linear-gradient(#000000, #ffffff);
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-main);
+  background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* 📦 Signup Container */
 .signup_container {
-  width: 30rem;
-  height: auto;
-  background-color: rgb(159, 158, 158);
-  border-radius: 2rem;
+  width: 100%;
+  max-width: 30rem;
+  background-color: var(--container-bg);
+  border-radius: 1.5rem;
   padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* 👋 Welcome Section */
 .welcome_msg {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .welcome_msg p {
-  margin-top: -1rem;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
 }
 
+/* 🧾 Input Group */
 .data_inputs {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .data_inputs input {
-  width: 20rem;
-  height: 2rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.2s;
 }
 
+.data_inputs input:focus {
+  box-shadow: 0 0 0 2px rgba(79, 128, 255, 0.6);
+}
+
+/* 🆙 Sign Up Button */
 .signupBtn {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .signupBtn input {
-  width: 8.5rem;
-  height: 2.5rem;
-  border-radius: 0.5rem;
-  background-color: rgb(76, 76, 245);
+  width: 10rem;
+  height: 2.8rem;
+  background-color: var(--button-bg);
   color: white;
-  cursor: pointer;
+  font-weight: bold;
   border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.signupBtn input:hover {
+  background-color: var(--button-hover);
+}
+
+/* 🔁 Redirect to Login */
 .redirect_login {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  font-size: 0.95rem;
 }
 
 .loginLink {
-  color: rgb(23, 77, 152);
-  cursor: pointer;
   margin-left: 0.5rem;
+  color: var(--link-color);
+  cursor: pointer;
   font-weight: bold;
+  transition: text-decoration 0.2s;
 }
 
-/* ✅ For showMessage() alerts */
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+/* 🚨 Alert Message */
 .alert {
   padding: 1rem;
   margin-top: 1rem;
-  text-align: center;
   border-radius: 0.5rem;
+  text-align: center;
   font-weight: bold;
-  background-color: #ff4d4f;
+  background-color: var(--error-bg);
   color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .alert.success {
-  background-color: #4caf50;
+  background-color: var(--success-bg);
 }
 
 .hidden {
