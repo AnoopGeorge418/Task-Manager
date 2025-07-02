@@ -125,3 +125,18 @@ body {
 .delete:hover {
   background-color: #ff7375;
 }
+
+.edit_title,
+.edit_status {
+  margin-bottom: 8px;
+  display: block;
+  padding: 5px;
+  font-size: 16px;
+}
+.save,
+.cancel {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -80,8 +80,8 @@ body {
 .task_input_container {
   display: flex;
   background-color: #40414f;
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
+  border-radius: .5rem;
+  padding: 1rem 2rem;
   align-items: center;
   gap: 1rem;
   box-shadow: 0 0 0 1px #3f4147;
@@ -94,6 +94,7 @@ body {
   outline: none;
   color: white;
   font-size: 1rem;
+  /* padding: 2rem; */
 }
 
 .task_input_container button {

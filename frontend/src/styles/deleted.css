@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
-}
+} 
 
 body {
   background-color: #343541;
@@ -110,4 +110,20 @@ body {
 
 .restore:hover {
   background-color: #26de81;
+}
+
+.perm_delete{
+  background-color: #b80000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-left: .5rem;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.perm_delete:hover {
+  background-color: #e62a2a;
 }
