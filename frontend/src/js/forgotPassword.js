@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const step2 = document.getElementById("step2");
   const step3 = document.getElementById("step3");
 
-  let generatedOtp = "";
+  let userEmail = "";
 
   // STEP 1: Send OTP
-  sendOtpBtn.onclick = () => {
+  sendOtpBtn.onclick = async () => {
     const forgotEmailInput = forgotEmail.value.trim();
 
     if (forgotEmailInput === "") {
@@ -24,23 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Simulate sending OTP
-    generatedOtp = Math.floor(100000 + Math.random() * 900000).toString(); // 6-digit OTP
-    console.log("Generated OTP (simulated):", generatedOtp);
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/send-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: forgotEmailInput })
+      });
 
-    // Store email in localStorage (or add to list if needed)
-    let getEmail = JSON.parse(localStorage.getItem("UserEmailForForgotPassword")) || [];
-    getEmail.push(forgotEmailInput);
-    localStorage.setItem("UserEmailForForgotPassword", JSON.stringify(getEmail));
+      const data = await res.json();
 
-    // Show OTP step
-    step1.classList.add("hidden");
-    step2.classList.remove("hidden");
-    message.textContent = `✅ OTP sent to your email (pretend). Check console for the code.`;
+      if (res.ok) {
+        message.textContent = "✅ OTP sent to your email (check console for now)";
+        console.log("Generated OTP:", data.otp); // Simulated for frontend testing
+
+        userEmail = forgotEmailInput;
+        step1.classList.add("hidden");
+        step2.classList.remove("hidden");
+      } else {
+        alert(data.msg || "Something went wrong.");
+      }
+    } catch (err) {
+      alert("❌ Failed to send OTP");
+      console.error(err);
+    }
   };
 
   // STEP 2: Verify OTP
-  verifyOtpBtn.onclick = () => {
+  verifyOtpBtn.onclick = async () => {
     const otpEntered = otpInput.value.trim();
 
     if (otpEntered === "") {
@@ -48,17 +58,30 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (otpEntered === generatedOtp) {
-      message.textContent = "✅ OTP verified. Please reset your password.";
-      step2.classList.add("hidden");
-      step3.classList.remove("hidden");
-    } else {
-      alert("❌ Incorrect OTP. Try again.");
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/verify-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: userEmail, otp: otpEntered })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        message.textContent = "✅ OTP verified. Please reset your password.";
+        step2.classList.add("hidden");
+        step3.classList.remove("hidden");
+      } else {
+        alert(data.msg || "❌ Incorrect OTP");
+      }
+    } catch (err) {
+      alert("❌ Failed to verify OTP");
+      console.error(err);
     }
   };
 
   // STEP 3: Reset password
-  resetPasswordBtn.onclick = () => {
+  resetPasswordBtn.onclick = async () => {
     const pass1 = newPassword.value.trim();
     const pass2 = confirmPassword.value.trim();
 
@@ -72,16 +95,24 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Simulate updating password in localStorage (just for frontend phase)
-    const emails = JSON.parse(localStorage.getItem("UserEmailForForgotPassword")) || [];
-    const latestEmail = emails[emails.length - 1];
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/reset-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: userEmail, newPassword: pass1 })
+      });
 
-    const userPasswords = JSON.parse(localStorage.getItem("UserPasswords")) || {};
-    userPasswords[latestEmail] = pass1;
-    localStorage.setItem("UserPasswords", JSON.stringify(userPasswords));
+      const data = await res.json();
 
-    message.textContent = "🔒 Password successfully reset! You can now log in.";
-    window.location.href = './login.html'
-    step3.classList.add("hidden");
+      if (res.ok) {
+        message.textContent = "🔒 Password successfully reset!";
+        window.location.href = "./login.html";
+      } else {
+        alert(data.msg || "❌ Failed to reset password");
+      }
+    } catch (err) {
+      alert("❌ Server error while resetting password");
+      console.error(err);
+    }
   };
 });
