@@ -134,3 +134,8 @@ footer a:hover {
     text-align: center;
   }
 }
+
+
+.appLogo {
+  cursor: pointer;
+}
